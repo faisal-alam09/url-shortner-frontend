@@ -1,21 +1,18 @@
 import React from 'react'
-import { Navbar } from 'react-bootstrap'
-import { Container } from 'react-bootstrap'
-import { Nav } from 'react-bootstrap'
+
 
 export default function Header() {
     return (
         <>
-            <Navbar bg="primary" variant="dark">
-                <Container>
-                    <Navbar.Brand href="#home">Url Shortner</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features">shortned urls</Nav.Link>
-                        <Nav.Link href="#pricing">About</Nav.Link>
-                    </Nav>
-                    <span>by faisal-alam</span>
-                </Container>
-            </Navbar>
+            <nav className="navbar navbar-default bg-primary">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <a className="navbar-brand">
+                            <img alt="Brand" src="logo192.png" width="50px" height="50px"/>
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </>
     )
 }
