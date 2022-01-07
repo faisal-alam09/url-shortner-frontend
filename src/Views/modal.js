@@ -3,12 +3,12 @@ import React from 'react'
 export default function modal() {
     return (
         <div>
-            <div class="modal-body">
+            <div className="modal-body">
                 <h5>Popover in a modal</h5>
-                <p>This <a role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
+                <p>This <a role="button" className="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
                 <hr/>
                     <h5>Tooltips in a modal</h5>
-                    <p><a class="tooltip-test" title="Tooltip">This link</a> and <a class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
+                    <p><a className="tooltip-test" title="Tooltip">This link</a> and <a className="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
             </div>
         </div>
     )

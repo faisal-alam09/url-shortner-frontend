@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './Views/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Views/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header/>
-    <App />
+    <div style={{height:"100vh"}}>
+      <Header />
+      <App />
+      <Footer />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
