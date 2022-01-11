@@ -1,20 +1,23 @@
 import React from 'react';
+
 import ReactDOM from 'react-dom';
+
 import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
-import Header from './Views/Header';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Views/Footer';
+
+import App from './App';
+
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div style={{height:"100vh"}}>
-      <Header />
-      <App />
-      <Footer />
-    </div>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <>
+      {/* <div style={{ height: "100vh" }}> */}
+        <App />
+      {/* </div> */}
+    </>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
