@@ -1,3 +1,3 @@
-const ApiEndPoint = "http://localhost:8080/api";
+const ApiEndPoint = "https://rest-api-url-shortner-backend.herokuapp.com/a";
 
 export {ApiEndPoint};
