@@ -9,12 +9,13 @@ import Footer from './Footer';
 
 import axios from "axios";
 
+import { ApiEndPoint } from '../config';
+
 function Home() {
   const baseUrl = window.location.href;
   const [url, setUrl] = useState("");
   const [targetUrl, settargetUrl] = useState("")
   const [loadDynamicComp, setLoadDynamicComp] = useState(0);
-  const ApiEndPoint = "http://localhost:8080/api"
 
   function submitForm(e) {
     e.preventDefault();
@@ -30,7 +31,7 @@ function Home() {
       <Header />
       <div className='bg-dark text-white Home' >
         <div style={{ width: '50%', minWidth: "300px", position: 'relative', padding: '30px 0px 10px 0px', display: 'inline-block' }} >
-          <div style={{display:'inline-flex'}}>
+          <div style={{ display: 'inline-flex' }}>
             <h1>Url-Shortner</h1>
             <h4>(24x7 service)</h4>
           </div>
@@ -39,13 +40,12 @@ function Home() {
               <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} className="form-control" placeholder="URL" aria-describedby="sizing-addon1" />
             </div>
             <div className="input-group input-group-lg" style={{ padding: '10px', display: 'inline-block' }}>
-              {/* <button type="submit" onClick={() => setLoadDynamicComp(1)} className="btn btn-primary">Generate Short Url</button> */}
               <button type="submit" className="btn btn-primary">Generate Short Url</button>
             </div>
           </form>
           {loadDynamicComp ? (
             <Suspense fallback={<div>Loading Result....</div>}>
-              <Result display='block' url={targetUrl} baseUrl={baseUrl} />
+              <Result url={targetUrl} baseUrl={baseUrl} />
             </Suspense>
           ) : null}
         </div>

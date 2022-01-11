@@ -13,14 +13,10 @@ import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   <BrowserRouter>
     <>
-      {/* <div style={{ height: "100vh" }}> */}
-        <App />
-      {/* </div> */}
+      <App />
     </>
   </BrowserRouter>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
 reportWebVitals();

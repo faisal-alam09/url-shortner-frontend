@@ -2,12 +2,12 @@ import React from 'react'
 
 import axios from "axios";
 
+import {ApiEndPoint} from '../config';
+
 export default function Redirect(props) {
-    const ApiEndPoint = "http://localhost:8080/api"
 
     var currentUrl = window.location.href.split("/");
     currentUrl = currentUrl[currentUrl.length - 1];
-    // console.log("Got it..", currentUrl);
 
     axios.get(ApiEndPoint + '/findTargetUrl?target_url=' + currentUrl).then(resp => {
         console.log("Get Target ", resp.data.message);
