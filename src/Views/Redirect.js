@@ -28,14 +28,15 @@ export default function Redirect(props) {
         if (resp.data.message === 'invalid') {
 
         } else {
-            window.location.replace(urlParser(resp.data.message.main_url));
+            urlParser(resp.data.message.main_url)
+            // window.location.replace(urlParser(resp.data.message.main_url));
         }
     });
 
     return (
         <div>
             <h1>redirecting in 5 seconds...</h1>
-            <input type='button' value={urlClickMe} ></input>
+            <a href={urlClickMe} > click Here to Redirect </a>
         </div>
     )
 }
