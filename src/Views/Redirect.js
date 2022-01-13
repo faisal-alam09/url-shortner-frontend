@@ -28,8 +28,7 @@ export default function Redirect(props) {
         if (resp.data.message === 'invalid') {
 
         } else {
-            urlParser(resp.data.message.main_url)
-            // window.location.replace(urlParser(resp.data.message.main_url));
+            window.location.replace(urlParser(resp.data.message.main_url));
         }
     });
 
