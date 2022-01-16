@@ -111,9 +111,9 @@
     font-size: 0.8em;
   }
 
-  .my-tooltiptext {
+  /* .my-tooltiptext {
     display: none;
-  }
+  } */
 }
 
 -webkit-keyframes rotating /* Safari and Chrome */ {
