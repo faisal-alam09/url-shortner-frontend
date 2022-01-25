@@ -19,7 +19,11 @@ function Home() {
 
   function submitForm(e) {
     e.preventDefault();
-    axios.get(ApiEndPoint + '/registerUrl?url=' + url).then(resp => {
+    axios.get(ApiEndPoint + '/registerUrl' , {
+      params: {
+        url: url
+      }
+  }).then(resp => {
       console.log("Get Target ", resp.data.message)
       settargetUrl(resp.data.message.target_url)
       setLoadDynamicComp(1)

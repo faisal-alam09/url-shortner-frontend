@@ -12,9 +12,10 @@ export default function Redirect(props) {
     const [urlClickMe, seturlClickMe] = useState("");
 
     function urlParser(url) {
-        url = url.split("/");
-        var protocol = url[0];
-        if (protocol === "http" || protocol === "https") {
+        var split_url = url.split("/");
+        var protocol = split_url[0];
+        console.log(protocol , url);
+        if (protocol === "http:" || protocol === "https:") {
             seturlClickMe(url);
             return url;
         } else {
@@ -23,12 +24,19 @@ export default function Redirect(props) {
         }
     }
 
-    axios.get(ApiEndPoint + '/findTargetUrl?target_url=' + currentUrl).then(resp => {
+    axios.get( ApiEndPoint + '/findTargetUrl', {
+        params: {
+            target_url: currentUrl
+        }
+    }).then(resp => {
         console.log("Get Target ", resp.data.message);
         if (resp.data.message === 'invalid') {
 
         } else {
-            window.location.replace(urlParser(resp.data.message.main_url));
+            var main_url = urlParser(resp.data.message.main_url);
+            console.log(main_url);
+            window.location.replace(main_url);
+            window.location.href = main_url;
         }
     });
 
